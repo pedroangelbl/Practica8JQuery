@@ -1,0 +1,21 @@
+body{
+    font-family: system-ui,sans-serif;
+    margin: 50px;
+}
+
+.elementos{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+}
+
+.elemento{
+    width: 300px;
+    display: flex;
+    flex-direction: column;
+}
+
+.elemento img{
+    width: 300px;
+    height: 200px;
+}

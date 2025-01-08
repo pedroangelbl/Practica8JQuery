@@ -1,0 +1,28 @@
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    height: 100vh;
+    font-family: system-ui, sans-serif;
+    background-color: azure;
+}
+
+.contenedor{
+    text-align: center;
+}
+
+#panel{
+    font-size: 50px;
+    font-weight: 600;
+    color: white;
+    background-color: rgb(95, 167, 255);
+    width: 500px;
+    padding: 150px;
+    border-radius: 20px;
+}
+
+#message{
+    font-weight: 600;
+    font-size: 20px;
+}
