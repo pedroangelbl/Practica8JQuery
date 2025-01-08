@@ -6,17 +6,22 @@ const imagenes = [
 
 let cambiarColorFondo = document.querySelector('#cambiarColorFondo')
 let añadirElementos = document.querySelector('#añadirElementos')
+let resetear = document.querySelector('#resetear')
 
 function obtenerImagenAleatoria() {
     const indiceAleatorio = Math.floor(Math.random() * imagenes.length);
     return imagenes[indiceAleatorio];
 }
 
+resetear.addEventListener('click', ()=>{
+    window.location.reload()
+})
+
 cambiarColorFondo.addEventListener('click', ()=>{
     const color = document.querySelector('#color').value;
-    const botones = document.querySelectorAll('.elemento button');
-    botones.forEach(boton => {
-        boton.style.backgroundColor = color;
+    const elementos = document.querySelectorAll('.elemento');
+    elementos.forEach(elemento => {
+        elemento.style.backgroundColor = color;
     });
 })
 
@@ -26,6 +31,7 @@ añadirElementos.addEventListener('click', ()=>{
 
     const nuevoElemento = document.createElement('div');
     nuevoElemento.className = 'elemento';
+    nuevoElemento.style.background = color
 
     const img = document.createElement('img');
     img.src = obtenerImagenAleatoria();
@@ -33,14 +39,14 @@ añadirElementos.addEventListener('click', ()=>{
 
     const cambiarBtn = document.createElement('button');
     cambiarBtn.textContent = 'Cambiar';
-    cambiarBtn.style.backgroundColor = color;
+    cambiarBtn.classList = 'cambiar'
     cambiarBtn.addEventListener('click', () => {
         img.src = obtenerImagenAleatoria();
     });
 
     const borrarBtn = document.createElement('button');
     borrarBtn.textContent = 'Borrar';
-    borrarBtn.style.backgroundColor = color;
+    borrarBtn.classList = 'borrar'
     borrarBtn.addEventListener('click', () => {
         nuevoElemento.remove();
     });

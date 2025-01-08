@@ -10,16 +10,20 @@ $(document).ready(function () {
         return imagenes[indiceAleatorio];
     }
 
+    $('#resetear').click(function () { 
+        window.location.reload()
+    });
+
     $('#cambiarColorFondo').click(function () {
-        $('.elemento button').css({ "background-color": $('#color').val() });
+        $('.elemento').css({ "background-color": $('#color').val() });
     });
 
     $('#añadirElementos').click(function () {
         const nuevoElemento = $(`
-            <div class="elemento">
+            <div class="elemento" style="background-color: ${$('#color').val()}">
                 <img src="${obtenerImagenAleatoria()}" alt="Imagen de un gato">
-                <button class="cambiar" style="background-color: ${$('#color').val()}">Cambiar</button>
-                <button class="borrar" style="background-color: ${$('#color').val()}">Borrar</button>
+                <button class="cambiar">Cambiar</button>
+                <button class="borrar">Borrar</button>
             </div>
         `);
 
